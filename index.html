@@ -3,68 +3,83 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Agro Forte: Futuro Sustentável</title>
+    <title>AgroSustain | Futuro em Equilíbrio</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;600;800&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
 <body>
 
-    <header>
-        <nav class="container">
-            <div class="logo">Agro<span>Forte</span></div>
-            <ul class="nav-links">
-                <li><a href="#inicio">Início</a></li>
-                <li><a href="#sobre">Equilíbrio</a></li>
-                <li><a href="#contato">Contato</a></li>
+    <nav id="main-nav">
+        <div class="container nav-wrapper">
+            <div class="logo">AGRO<span>SUSTAIN</span></div>
+            <ul class="nav-menu">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#stats">Impacto</a></li>
+                <li><a href="#pilares">Pilares</a></li>
+                <li><a href="#footer" class="nav-btn">Conectar</a></li>
             </ul>
-            <button class="mobile-menu" id="mobile-menu">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
-            </button>
-        </nav>
+        </div>
+    </nav>
+
+    <header id="home" class="hero-advanced">
+        <div class="overlay"></div>
+        <div class="container hero-text">
+            <span class="badge">Inovação Consciente</span>
+            <h1>O Equilíbrio que o <br><span>Mundo Precisa</span></h1>
+            <p>Unindo a força da produção em escala com a inteligência da regeneração ambiental.</p>
+            <div class="hero-actions">
+                <a href="#pilares" class="btn-main">Explorar Pilares</a>
+                <a href="#" class="btn-ghost">Ver Relatório 2026</a>
+            </div>
+        </div>
     </header>
 
-    <main>
-        <section id="inicio" class="hero">
-            <div class="container hero-content">
-                <h1>Futuro Sustentável</h1>
-                <p>O equilíbrio perfeito entre a alta produtividade no campo e a preservação do meio ambiente.</p>
-                <a href="#sobre" class="btn-primary">Saiba Mais</a>
+    <section id="stats" class="stats-bar">
+        <div class="container stats-grid">
+            <div class="stat-item">
+                <h2 class="counter" data-target="45">0</h2><span>%</span>
+                <p>Menos uso de água</p>
             </div>
-        </section>
+            <div class="stat-item">
+                <h2 class="counter" data-target="120">0</h2><span>k</span>
+                <p>Hectares Preservados</p>
+            </div>
+            <div class="stat-item">
+                <h2 class="counter" data-target="98">0</h2><span>%</span>
+                <p>Energia Renovável</p>
+            </div>
+        </div>
+    </section>
 
-        <section id="sobre" class="container info-section">
-            <div class="card">
-                <h3>Produção Eficiente</h3>
-                <p>Tecnologia de ponta para alimentar o mundo com o máximo de aproveitamento de recursos.</p>
+    <section id="pilares" class="pillars container">
+        <div class="section-title">
+            <h2>Nossa Tríade Estratégica</h2>
+            <div class="underline"></div>
+        </div>
+        
+        <div class="pillars-grid">
+            <div class="pillar-card reveal">
+                <div class="icon-box">🌱</div>
+                <h3>Solo Vivo</h3>
+                <p>Técnicas de plantio direto e rotação de culturas que regeneram a microbiota da terra.</p>
             </div>
-            <div class="card">
-                <h3>Preservação</h3>
-                <p>Respeito à biodiversidade e manejo inteligente do solo para garantir as próximas gerações.</p>
+            <div class="pillar-card reveal">
+                <div class="icon-box">🛰️</div>
+                <h3>Agro 5.0</h3>
+                <p>Drones e IA monitorando cada centímetro para aplicar insumos apenas onde é necessário.</p>
             </div>
-            <div class="card">
-                <h3>Tecnologia Verde</h3>
-                <p>Inovação que reduz o impacto ambiental e otimiza a colheita de forma consciente.</p>
+            <div class="pillar-card reveal">
+                <div class="icon-box">💧</div>
+                <h3>Ciclo Hidrológico</h3>
+                <p>Sistemas inteligentes de irrigação que respeitam o tempo das bacias fluviais.</p>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <section id="contato" class="contact-section">
-            <div class="container">
-                <h2>Junte-se à Revolução Verde</h2>
-                <form id="agro-form">
-                    <input type="email" placeholder="Seu melhor e-mail" required>
-                    <button type="submit">Cadastrar</button>
-                </form>
-                <div id="form-feedback"></div>
+    <footer id="footer">
+        <div class="container footer-content">
+            <div class="footer-info">
+                <h3>AGROSUSTAIN</h3>
+                <p>Liderando a transição para um campo forte e uma terra protegida.</p>
             </div>
-        </section>
-    </main>
-
-    <footer>
-        <p>&copy; 2024 Agro Forte Futuro Sustentável. Todos os direitos reservados.</p>
-    </footer>
-
-    <script src="script.js"></script>
-</body>
-</html>
+            <div class
