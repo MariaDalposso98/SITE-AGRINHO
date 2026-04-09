@@ -1,40 +1,34 @@
 
-// Inicializa os ícones do Lucide
-document.addEventListener('DOMContentLoaded', () => {
-    lucide.createIcons();
-    animateStats();
+// Efeito de mudança na Navbar ao rolar
+window.addEventListener('scroll', () => {
+    const nav = document.getElementById('navbar');
+    if (window.scrollY > 50) {
+        nav.style.backgroundColor = '#081c15';
+        nav.style.padding = '10px 0';
+    } else {
+        nav.style.backgroundColor = '#1b4332';
+        nav.style.padding = '20px 0';
+    }
 });
 
-// Função simples para simular cliques nos botões
-function handleAction(type) {
-    if(type === 'saiba-mais') {
-        alert("Redirecionando para nossas políticas de ESG e sustentabilidade!");
-    } else {
-        alert("Iniciando tour virtual pela fazenda tecnológica...");
-    }
-}
+// Animação simples de entrada dos cards
+const cards = document.querySelectorAll('.card');
+const observerOptions = {
+    threshold: 0.2
+};
 
-// Animação de contagem para as estatísticas
-function animateStats() {
-    const stats = [
-        { id: 'counter-co2', end: 45, suffix: '%' },
-        { id: 'counter-prod', end: 30, suffix: '%' }
-    ];
-
-    stats.forEach(stat => {
-        let start = 0;
-        const duration = 2000; // 2 segundos
-        const obj = document.getElementById(stat.id);
-        const increment = stat.end / (duration / 16); // ~60fps
-
-        const timer = setInterval(() => {
-            start += increment;
-            if (start >= stat.end) {
-                obj.innerText = stat.end + stat.suffix;
-                clearInterval(timer);
-            } else {
-                obj.innerText = Math.floor(start) + stat.suffix;
-            }
-        }, 16);
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.style.opacity = '1';
+            entry.target.style.transform = 'translateY(0)';
+        }
     });
-}
+}, observerOptions);
+
+cards.forEach(card => {
+    card.style.opacity = '0';
+    card.style.transform = 'translateY(50px)';
+    card.style.transition = 'all 0.6s ease-out';
+    observer.observe(card);
+});
