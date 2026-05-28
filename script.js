@@ -4,7 +4,6 @@
 // Edite estes arrays para modificar o conteúdo dinâmico
 // ============================================
 
-// Dados dos Cards "Sobre"
 const aboutData = [
     {
         id: 1,
@@ -29,7 +28,6 @@ const aboutData = [
     }
 ];
 
-// Dados das Tabs de Práticas Sustentáveis
 const practicesData = [
     {
         id: 'tab1',
@@ -101,7 +99,6 @@ const practicesData = [
     }
 ];
 
-// Dados das Tecnologias
 const technologiesData = [
     {
         id: 1,
@@ -137,7 +134,13 @@ const technologiesData = [
     }
 ];
 
-// Dados do Carrossel de Depoimentos
+const numbersData = [
+    { value: 500, suffix: '+', label: 'Produtores Atendidos' },
+    { value: 40, suffix: '%', label: 'Redução de Água' },
+    { value: 98, suffix: '%', label: 'Satisfação' },
+    { value: 1200, suffix: ' ha', label: 'Área Sustentável' }
+];
+
 const testimonialsData = [
     {
         id: 1,
@@ -173,7 +176,6 @@ const testimonialsData = [
     }
 ];
 
-// Dados do Accordion FAQ
 const faqData = [
     {
         id: 'faq1',
@@ -203,13 +205,10 @@ const faqData = [
 ];
 
 // ============================================
-// FUNÇÕES DE RENDERIZAÇÃO
+// RENDERIZAÇÕES
 // ============================================
-
-// Renderizar Cards Sobre
 function renderAboutCards() {
-    const aboutGrid = document.getElementById('about-grid');
-    
+    const grid = document.getElementById('about-grid');
     aboutData.forEach(card => {
         const article = document.createElement('article');
         article.className = 'about-card animate-reveal';
@@ -220,72 +219,61 @@ function renderAboutCards() {
                 <p>${card.description}</p>
             </div>
         `;
-        aboutGrid.appendChild(article);
+        grid.appendChild(article);
     });
 }
 
-// Renderizar Tabs
 function renderTabs() {
-    const tabsNav = document.getElementById('tabs-nav');
-    const tabsContent = document.getElementById('tabs-content');
+    const nav = document.getElementById('tabs-nav');
+    const content = document.getElementById('tabs-content');
     
     practicesData.forEach((tab, index) => {
-        // Criar botão da tab
-        const tabBtn = document.createElement('button');
-        tabBtn.className = `tab-btn ${index === 0 ? 'active' : ''}`;
-        tabBtn.setAttribute('role', 'tab');
-        tabBtn.setAttribute('aria-selected', index === 0 ? 'true' : 'false');
-        tabBtn.setAttribute('aria-controls', `panel-${tab.id}`);
-        tabBtn.id = `tab-${tab.id}`;
-        tabBtn.innerHTML = `<span aria-hidden="true">${tab.icon}</span> ${tab.title}`;
-        tabBtn.addEventListener('click', () => switchTab(index));
-        tabsNav.appendChild(tabBtn);
+        const btn = document.createElement('button');
+        btn.className = `tab-btn ${index === 0 ? 'active' : ''}`;
+        btn.setAttribute('role', 'tab');
+        btn.setAttribute('aria-selected', index === 0 ? 'true' : 'false');
+        btn.setAttribute('aria-controls', `panel-${tab.id}`);
+        btn.id = `tab-${tab.id}`;
+        btn.innerHTML = `<span aria-hidden="true">${tab.icon}</span> ${tab.title}`;
+        btn.addEventListener('click', () => switchTab(index));
+        nav.appendChild(btn);
         
-        // Criar painel da tab
-        const tabPanel = document.createElement('div');
-        tabPanel.className = `tab-panel ${index === 0 ? 'active' : ''}`;
-        tabPanel.setAttribute('role', 'tabpanel');
-        tabPanel.setAttribute('aria-labelledby', `tab-${tab.id}`);
-        tabPanel.id = `panel-${tab.id}`;
-        tabPanel.innerHTML = `
+        const panel = document.createElement('div');
+        panel.className = `tab-panel ${index === 0 ? 'active' : ''}`;
+        panel.setAttribute('role', 'tabpanel');
+        panel.setAttribute('aria-labelledby', `tab-${tab.id}`);
+        panel.id = `panel-${tab.id}`;
+        panel.innerHTML = `
             <div class="tab-panel-content">
                 <div class="tab-panel-text">
                     <h3>${tab.content.title}</h3>
                     <p>${tab.content.description}</p>
-                    <ul>
-                        ${tab.content.benefits.map(benefit => `<li>${benefit}</li>`).join('')}
-                    </ul>
+                    <ul>${tab.content.benefits.map(b => `<li>${b}</li>`).join('')}</ul>
                 </div>
                 <img src="${tab.content.image}" alt="${tab.content.imageAlt}" class="tab-panel-img" loading="lazy">
             </div>
         `;
-        tabsContent.appendChild(tabPanel);
+        content.appendChild(panel);
     });
 }
 
-// Switch Tab
 function switchTab(index) {
-    const tabBtns = document.querySelectorAll('.tab-btn');
-    const tabPanels = document.querySelectorAll('.tab-panel');
-    
-    tabBtns.forEach((btn, i) => {
-        btn.classList.toggle('active', i === index);
-        btn.setAttribute('aria-selected', i === index ? 'true' : 'false');
+    document.querySelectorAll('.tab-btn').forEach((btn, i) => {
+        const isActive = i === index;
+        btn.classList.toggle('active', isActive);
+        btn.setAttribute('aria-selected', isActive);
     });
-    
-    tabPanels.forEach((panel, i) => {
+    document.querySelectorAll('.tab-panel').forEach((panel, i) => {
         panel.classList.toggle('active', i === index);
     });
 }
 
-// Renderizar Tecnologias
 function renderTechnologies() {
-    const techGrid = document.getElementById('tech-grid');
-    
+    const grid = document.getElementById('tech-grid');
     technologiesData.forEach(tech => {
-        const article = document.createElement('article');
-        article.className = 'tech-card animate-reveal';
-        article.innerHTML = `
+        const card = document.createElement('article');
+        card.className = 'tech-card animate-reveal';
+        card.innerHTML = `
             <img src="${tech.image}" alt="${tech.imageAlt}" class="tech-card-img" loading="lazy">
             <div class="tech-card-content">
                 <h3>${tech.title}</h3>
@@ -296,340 +284,317 @@ function renderTechnologies() {
                 </div>
             </div>
         `;
-        techGrid.appendChild(article);
+        grid.appendChild(card);
     });
 }
 
-// Renderizar Carrossel
+function renderNumbers() {
+    const grid = document.getElementById('numbers-grid');
+    numbersData.forEach(item => {
+        const div = document.createElement('div');
+        div.className = 'number-card animate-reveal';
+        div.innerHTML = `
+            <span class="number-value" data-target="${item.value}" data-suffix="${item.suffix}">0${item.suffix}</span>
+            <span class="number-label">${item.label}</span>
+        `;
+        grid.appendChild(div);
+    });
+}
+
 function renderCarousel() {
-    const carouselContainer = document.getElementById('carousel-container');
-    const carouselDots = document.getElementById('carousel-dots');
+    const container = document.getElementById('carousel-container');
+    const dots = document.getElementById('carousel-dots');
     
-    testimonialsData.forEach((testimonial, index) => {
-        // Criar item do carrossel
-        const carouselItem = document.createElement('div');
-        carouselItem.className = 'carousel-item';
-        carouselItem.setAttribute('role', 'group');
-        carouselItem.setAttribute('aria-roledescription', 'slide');
-        carouselItem.setAttribute('aria-label', `Depoimento ${index + 1} de ${testimonialsData.length}`);
-        carouselItem.innerHTML = `
+    testimonialsData.forEach((t, i) => {
+        const item = document.createElement('div');
+        item.className = 'carousel-item';
+        item.setAttribute('role', 'group');
+        item.setAttribute('aria-roledescription', 'slide');
+        item.setAttribute('aria-label', `Depoimento ${i+1} de ${testimonialsData.length}`);
+        item.innerHTML = `
             <div class="carousel-item-content">
-                <img src="${testimonial.image}" alt="${testimonial.imageAlt}" class="carousel-item-img" loading="lazy">
+                <img src="${t.image}" alt="${t.imageAlt}" class="carousel-item-img" loading="lazy">
                 <div class="carousel-item-text">
-                    <p>"${testimonial.text}"</p>
-                    <div class="author">${testimonial.author}</div>
-                    <div class="role">${testimonial.role}</div>
+                    <p>"${t.text}"</p>
+                    <div class="author">${t.author}</div>
+                    <div class="role">${t.role}</div>
                 </div>
             </div>
         `;
-        carouselContainer.appendChild(carouselItem);
+        container.appendChild(item);
         
-        // Criar dot de navegação
         const dot = document.createElement('button');
-        dot.className = `carousel-dot ${index === 0 ? 'active' : ''}`;
-        dot.setAttribute('aria-label', `Ir para depoimento ${index + 1}`);
-        dot.addEventListener('click', () => goToSlide(index));
-        carouselDots.appendChild(dot);
+        dot.className = `carousel-dot ${i === 0 ? 'active' : ''}`;
+        dot.setAttribute('aria-label', `Ir para depoimento ${i+1}`);
+        dot.addEventListener('click', () => goToSlide(i));
+        dots.appendChild(dot);
     });
     
-    initializeCarousel();
+    initCarousel();
 }
 
-// Lógica do Carrossel
 let currentSlide = 0;
-let slideInterval;
+let slideInterval = null;
 let isTransitioning = false;
 
 function goToSlide(index) {
     if (isTransitioning) return;
-    isTransitioning = true;
-    
     const slides = document.querySelectorAll('.carousel-item');
-    const dots = document.querySelectorAll('.carousel-dot');
+    if (!slides.length) return;
     
     if (index < 0) index = slides.length - 1;
     if (index >= slides.length) index = 0;
     
+    isTransitioning = true;
     currentSlide = index;
     
-    slides.forEach((slide, i) => {
+    slides.forEach(slide => {
         slide.style.transform = `translateX(-${currentSlide * 100}%)`;
     });
     
-    dots.forEach((dot, i) => {
+    document.querySelectorAll('.carousel-dot').forEach((dot, i) => {
         dot.classList.toggle('active', i === currentSlide);
     });
     
-    setTimeout(() => {
-        isTransitioning = false;
-    }, 500);
+    setTimeout(() => { isTransitioning = false; }, 600);
 }
 
-function initializeCarousel() {
-    const prevBtn = document.querySelector('.carousel-btn.prev');
-    const nextBtn = document.querySelector('.carousel-btn.next');
+function initCarousel() {
+    const prev = document.querySelector('.carousel-btn.prev');
+    const next = document.querySelector('.carousel-btn.next');
+    if (prev) prev.addEventListener('click', () => goToSlide(currentSlide - 1));
+    if (next) next.addEventListener('click', () => goToSlide(currentSlide + 1));
     
-    prevBtn.addEventListener('click', () => goToSlide(currentSlide - 1));
-    nextBtn.addEventListener('click', () => goToSlide(currentSlide + 1));
-    
-    // Auto-play do carrossel
     startAutoPlay();
-    
-    // Parar auto-play quando hover
     const carousel = document.querySelector('.carousel');
     carousel.addEventListener('mouseenter', stopAutoPlay);
     carousel.addEventListener('mouseleave', startAutoPlay);
     carousel.addEventListener('focusin', stopAutoPlay);
     carousel.addEventListener('focusout', startAutoPlay);
     
-    // Suporte a touch e teclado
-    let touchStartX = 0;
-    let touchEndX = 0;
-    
-    carousel.addEventListener('touchstart', (e) => {
-        touchStartX = e.changedTouches[0].screenX;
-    }, {passive: true});
-    
-    carousel.addEventListener('touchend', (e) => {
-        touchEndX = e.changedTouches[0].screenX;
-        handleSwipe();
-    });
-    
     document.addEventListener('keydown', (e) => {
         if (e.key === 'ArrowLeft') goToSlide(currentSlide - 1);
         if (e.key === 'ArrowRight') goToSlide(currentSlide + 1);
     });
-    
-    function handleSwipe() {
-        const swipeThreshold = 50;
-        if (touchEndX < touchStartX - swipeThreshold) {
-            goToSlide(currentSlide + 1);
-        }
-        if (touchEndX > touchStartX + swipeThreshold) {
-            goToSlide(currentSlide - 1);
-        }
-    }
 }
 
 function startAutoPlay() {
     stopAutoPlay();
-    slideInterval = setInterval(() => {
-        goToSlide(currentSlide + 1);
-    }, 5000);
+    slideInterval = setInterval(() => goToSlide(currentSlide + 1), 5000);
 }
-
 function stopAutoPlay() {
-    if (slideInterval) {
-        clearInterval(slideInterval);
-    }
+    if (slideInterval) clearInterval(slideInterval);
 }
 
-// Renderizar Accordion
 function renderAccordion() {
     const accordion = document.getElementById('accordion');
-    
-    faqData.forEach((item) => {
-        const accordionItem = document.createElement('div');
-        accordionItem.className = 'accordion-item';
-        accordionItem.setAttribute('role', 'listitem');
+    faqData.forEach(item => {
+        const wrapper = document.createElement('div');
+        wrapper.className = 'accordion-item';
+        wrapper.setAttribute('role', 'listitem');
         
         const header = document.createElement('button');
         header.className = 'accordion-header';
         header.setAttribute('aria-expanded', 'false');
         header.setAttribute('aria-controls', `content-${item.id}`);
         header.id = `header-${item.id}`;
-        header.innerHTML = `
-            <span>${item.question}</span>
-            <span class="accordion-icon" aria-hidden="true">+</span>
-        `;
+        header.innerHTML = `<span>${item.question}</span><span class="accordion-icon" aria-hidden="true">+</span>`;
         
         const content = document.createElement('div');
         content.className = 'accordion-content';
+        content.id = `content-${item.id}`;
         content.setAttribute('role', 'region');
         content.setAttribute('aria-labelledby', `header-${item.id}`);
-        content.id = `content-${item.id}`;
         content.innerHTML = `<div class="accordion-content-inner"><p>${item.answer}</p></div>`;
         
-        header.addEventListener('click', () => toggleAccordion(header, content));
+        header.addEventListener('click', () => {
+            const isOpen = header.getAttribute('aria-expanded') === 'true';
+            document.querySelectorAll('.accordion-header').forEach(h => {
+                h.setAttribute('aria-expanded', 'false');
+                h.nextElementSibling.classList.remove('active');
+                h.querySelector('.accordion-icon').textContent = '+';
+            });
+            if (!isOpen) {
+                header.setAttribute('aria-expanded', 'true');
+                content.classList.add('active');
+                header.querySelector('.accordion-icon').textContent = '×';
+            }
+        });
         
-        accordionItem.appendChild(header);
-        accordionItem.appendChild(content);
-        accordion.appendChild(accordionItem);
+        wrapper.appendChild(header);
+        wrapper.appendChild(content);
+        accordion.appendChild(wrapper);
     });
 }
 
-function toggleAccordion(header, content) {
-    const isExpanded = header.getAttribute('aria-expanded') === 'true';
+// ============================================
+// CONTADORES ANIMADOS (Intersection Observer)
+// ============================================
+function animateCounters() {
+    const counters = document.querySelectorAll('.number-value');
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const el = entry.target;
+                const target = parseInt(el.dataset.target);
+                const suffix = el.dataset.suffix;
+                const duration = 2000;
+                const step = target / (duration / 16);
+                let current = 0;
+                
+                const updateCounter = () => {
+                    current += step;
+                    if (current < target) {
+                        el.textContent = Math.floor(current) + suffix;
+                        requestAnimationFrame(updateCounter);
+                    } else {
+                        el.textContent = target + suffix;
+                    }
+                };
+                updateCounter();
+                observer.unobserve(el);
+            }
+        });
+    }, { threshold: 0.5 });
     
-    // Fechar todos os outros
-    document.querySelectorAll('.accordion-header').forEach(h => {
-        if (h !== header) {
-            h.setAttribute('aria-expanded', 'false');
-            h.nextElementSibling.classList.remove('active');
-            h.querySelector('.accordion-icon').textContent = '+';
+    counters.forEach(counter => observer.observe(counter));
+}
+
+// ============================================
+// SCROLL REVEAL
+// ============================================
+function initScrollReveal() {
+    const reveals = document.querySelectorAll('.animate-reveal');
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('revealed');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.15 });
+    
+    reveals.forEach(el => observer.observe(el));
+}
+
+// ============================================
+// PARALLAX DO HERO
+// ============================================
+function initParallax() {
+    const bg = document.querySelector('.hero-bg');
+    if (!bg) return;
+    window.addEventListener('scroll', () => {
+        const scrolled = window.pageYOffset;
+        bg.style.transform = `translateY(${scrolled * 0.4}px)`;
+    }, { passive: true });
+}
+
+// ============================================
+// BOTÃO VOLTAR AO TOPO
+// ============================================
+function initBackToTop() {
+    const btn = document.getElementById('back-to-top');
+    window.addEventListener('scroll', () => {
+        if (window.pageYOffset > 600) {
+            btn.classList.add('visible');
+        } else {
+            btn.classList.remove('visible');
         }
-    });
+    }, { passive: true });
     
-    header.setAttribute('aria-expanded', !isExpanded);
-    content.classList.toggle('active');
-    header.querySelector('.accordion-icon').textContent = isExpanded ? '+' : '×';
+    btn.addEventListener('click', () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
 }
 
 // ============================================
-// FUNÇÕES DE ACESSIBILIDADE
+// ACESSIBILIDADE
 // ============================================
-
-// Controle de tamanho de fonte
 let currentFontSize = 100;
-
 function changeFontSize(delta) {
     currentFontSize = Math.min(Math.max(currentFontSize + delta, 80), 150);
     document.documentElement.style.fontSize = `${currentFontSize}%`;
     localStorage.setItem('fontSize', currentFontSize);
-    announceFontSize();
 }
 
-function announceFontSize() {
-    const announcement = document.createElement('div');
-    announcement.setAttribute('aria-live', 'polite');
-    announcement.setAttribute('aria-atomic', 'true');
-    announcement.style.position = 'absolute';
-    announcement.style.left = '-9999px';
-    announcement.textContent = `Tamanho da fonte: ${currentFontSize}%`;
-    document.body.appendChild(announcement);
-    setTimeout(() => announcement.remove(), 1000);
-}
-
-// Alternar alto contraste
 function toggleContrast() {
     document.body.classList.toggle('high-contrast');
-    const isHighContrast = document.body.classList.contains('high-contrast');
-    localStorage.setItem('highContrast', isHighContrast);
+    localStorage.setItem('highContrast', document.body.classList.contains('high-contrast'));
 }
 
-// ============================================
-// SCROLL REVEAL ANIMATION
-// ============================================
-function initScrollReveal() {
-    const revealElements = document.querySelectorAll('.animate-reveal');
+function initAccessibility() {
+    document.getElementById('font-increase').addEventListener('click', () => changeFontSize(10));
+    document.getElementById('font-decrease').addEventListener('click', () => changeFontSize(-10));
+    document.getElementById('contrast-toggle').addEventListener('click', toggleContrast);
     
-    const revealOnScroll = () => {
-        const windowHeight = window.innerHeight;
-        const revealPoint = 100;
-        
-        revealElements.forEach(element => {
-            const elementTop = element.getBoundingClientRect().top;
-            if (elementTop < windowHeight - revealPoint) {
-                element.classList.add('revealed');
-            }
-        });
-    };
-    
-    window.addEventListener('scroll', revealOnScroll, {passive: true});
-    window.addEventListener('load', revealOnScroll);
-    revealOnScroll(); // Verificar elementos já visíveis
+    const savedFont = localStorage.getItem('fontSize');
+    if (savedFont) {
+        currentFontSize = parseInt(savedFont);
+        document.documentElement.style.fontSize = `${currentFontSize}%`;
+    }
+    if (localStorage.getItem('highContrast') === 'true') {
+        document.body.classList.add('high-contrast');
+    }
 }
 
 // ============================================
 // MENU MOBILE
 // ============================================
 function initMobileMenu() {
-    const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
-    const navMenu = document.querySelector('.nav-menu');
-    
-    mobileMenuBtn.addEventListener('click', () => {
-        const isExpanded = mobileMenuBtn.getAttribute('aria-expanded') === 'true';
-        mobileMenuBtn.setAttribute('aria-expanded', !isExpanded);
-        navMenu.classList.toggle('active');
+    const btn = document.querySelector('.mobile-menu-btn');
+    const menu = document.querySelector('.nav-menu');
+    btn.addEventListener('click', () => {
+        const expanded = btn.getAttribute('aria-expanded') === 'true';
+        btn.setAttribute('aria-expanded', !expanded);
+        menu.classList.toggle('active');
     });
-    
-    // Fechar menu ao clicar em um link
-    navMenu.querySelectorAll('a').forEach(link => {
+    menu.querySelectorAll('a').forEach(link => {
         link.addEventListener('click', () => {
-            navMenu.classList.remove('active');
-            mobileMenuBtn.setAttribute('aria-expanded', 'false');
+            menu.classList.remove('active');
+            btn.setAttribute('aria-expanded', 'false');
         });
     });
 }
 
 // ============================================
-// FORMULÁRIO DE CONTATO
+// FORMULÁRIO
 // ============================================
-function initContactForm() {
+function initForm() {
     const form = document.querySelector('.contact-form');
-    
     form.addEventListener('submit', (e) => {
         e.preventDefault();
-        
-        const formData = new FormData(form);
-        const data = Object.fromEntries(formData);
-        
-        console.log('Form submitted:', data);
-        
-        // Feedback visual
-        const submitBtn = form.querySelector('.submit-btn');
-        const originalText = submitBtn.textContent;
-        submitBtn.textContent = '✓ Mensagem Enviada com Sucesso!';
-        submitBtn.style.background = '#4CAF50';
-        submitBtn.disabled = true;
-        
+        const btn = form.querySelector('.submit-btn');
+        const original = btn.textContent;
+        btn.textContent = '✓ Mensagem Enviada!';
+        btn.style.background = '#4CAF50';
+        btn.disabled = true;
         setTimeout(() => {
-            submitBtn.textContent = originalText;
-            submitBtn.style.background = '';
-            submitBtn.disabled = false;
+            btn.textContent = original;
+            btn.style.background = '';
+            btn.disabled = false;
             form.reset();
         }, 3000);
     });
 }
 
 // ============================================
-// INICIALIZAÇÃO
+// INICIALIZAÇÃO GERAL
 // ============================================
 document.addEventListener('DOMContentLoaded', () => {
-    console.log('🚜 Agro Forte - Inicializando site...');
-    
-    // Renderizar componentes dinâmicos
     renderAboutCards();
     renderTabs();
     renderTechnologies();
+    renderNumbers();
     renderCarousel();
     renderAccordion();
     
-    // Inicializar funcionalidades
     initScrollReveal();
+    initParallax();
+    initBackToTop();
+    animateCounters();
+    initAccessibility();
     initMobileMenu();
-    initContactForm();
+    initForm();
     
-    // Restaurar preferências do localStorage
-    const savedFontSize = localStorage.getItem('fontSize');
-    if (savedFontSize) {
-        currentFontSize = parseInt(savedFontSize);
-        document.documentElement.style.fontSize = `${currentFontSize}%`;
-    }
-    
-    const savedContrast = localStorage.getItem('highContrast');
-    if (savedContrast === 'true') {
-        document.body.classList.add('high-contrast');
-    }
-    
-    // Configurar controles de acessibilidade
-    document.getElementById('font-increase').addEventListener('click', () => changeFontSize(10));
-    document.getElementById('font-decrease').addEventListener('click', () => changeFontSize(-10));
-    document.getElementById('contrast-toggle').addEventListener('click', toggleContrast);
-    
-    console.log('✅ Agro Forte - Site inicializado com sucesso!');
-    console.log('📊 Componentes renderizados:');
-    console.log('  - Cards Sobre: ' + aboutData.length);
-    console.log('  - Tabs de Práticas: ' + practicesData.length);
-    console.log('  - Tecnologias: ' + technologiesData.length);
-    console.log('  - Depoimentos: ' + testimonialsData.length);
-    console.log('  - FAQ: ' + faqData.length);
+    console.log('✅ Agro Forte - Site carregado com todas as melhorias.');
 });
-
-// Service Worker para melhor performance (opcional)
-if ('serviceWorker' in navigator) {
-    window.addEventListener('load', () => {
-        // Implementação futura de cache para imagens
-        console.log('📦 Service Worker pronto para implementação');
-    });
-}
