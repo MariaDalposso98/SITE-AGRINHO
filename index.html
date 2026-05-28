@@ -8,7 +8,7 @@
     <title>Agro Forte | Futuro Sustentável</title>
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
 <body>
     <a href="#main-content" class="skip-link" aria-label="Pular para conteúdo principal">Pular para conteúdo</a>
@@ -24,6 +24,7 @@
                     <li role="none"><a href="#sobre" role="menuitem">Sobre</a></li>
                     <li role="none"><a href="#praticas" role="menuitem">Práticas</a></li>
                     <li role="none"><a href="#tecnologias" role="menuitem">Tecnologias</a></li>
+                    <li role="none"><a href="#numeros" role="menuitem">Resultados</a></li>
                     <li role="none"><a href="#depoimentos" role="menuitem">Depoimentos</a></li>
                     <li role="none"><a href="#contato" role="menuitem">Contato</a></li>
                 </ul>
@@ -40,7 +41,7 @@
     </header>
 
     <main id="main-content">
-        <!-- Hero Section -->
+        <!-- Hero Section com Parallax -->
         <section class="hero" aria-label="Seção principal">
             <div class="hero-bg">
                 <img src="https://images.unsplash.com/photo-1625246333195-78d9c38ad449?w=1920&h=800&fit=crop" alt="Campo agrícola sustentável" class="hero-bg-img">
@@ -106,6 +107,16 @@
                 <h2 id="tecnologias-heading" class="section-title animate-reveal">Tecnologias que Impulsionam o Agro Sustentável</h2>
                 <div class="tech-grid" id="tech-grid">
                     <!-- Cards de tecnologia serão renderizados via JS -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção de Números (Contadores) -->
+        <section id="numeros" class="numbers" aria-labelledby="numeros-heading">
+            <div class="container">
+                <h2 id="numeros-heading" class="section-title animate-reveal">Nossos Resultados em Números</h2>
+                <div class="numbers-grid" id="numbers-grid">
+                    <!-- Contadores renderizados via JS -->
                 </div>
             </div>
         </section>
@@ -200,6 +211,7 @@
                         <li><a href="#sobre">Sobre Nós</a></li>
                         <li><a href="#praticas">Práticas</a></li>
                         <li><a href="#tecnologias">Tecnologias</a></li>
+                        <li><a href="#numeros">Resultados</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">
@@ -216,6 +228,9 @@
             </div>
         </div>
     </footer>
+
+    <!-- Botão Voltar ao Topo -->
+    <button id="back-to-top" aria-label="Voltar ao topo" title="Voltar ao topo">↑</button>
 
     <script src="script.js"></script>
 </body>
