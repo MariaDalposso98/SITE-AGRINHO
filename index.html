@@ -1,31 +1,88 @@
 
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AgroForte | Futuro Regenerativo</title>
+    <title>AgroSustentável - Futuro Verde</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
-    <script src="https://unpkg.com/lucide@latest"></script>
 </head>
 <body>
 
-    <nav class="navbar" id="navbar">
-        <div class="logo">AGRO<span>FORTE</span></div>
-        <ul class="nav-links">
-            <li><a href="#home">Home</a></li>
-            <li><a href="#pilares">Pilares</a></li>
-            <li><a href="#tech">Tecnologia</a></li>
-        </ul>
-        <button class="btn-cta">Explorar</button>
-    </nav>
+    <a href="#conteudo-principal" class="sr-only">Pular para o conteúdo principal</a>
 
-    <header id="home" class="hero">
-        <div class="hero-overlay"></div>
-        <div class="hero-content">
-            <span class="badge">Agrotech Sustentável</span>
-            <h1>O Equilíbrio que <br><span class="green-text">Nutre o Planeta</span></h1>
-            <p>Conectando agricultura avançada à preservação ambiental para um amanhã regenerativo.</p>
-            <div class="hero-btns">
-                <a
+    <div class="barra-acessibilidade" role="toolbar" aria-label="Ferramentas de Acessibilidade">
+        <button id="btn-contraste" aria-label="Alternar Alto Contraste">🌓 Alto Contraste</button>
+        <button id="btn-aumentar" aria-label="Aumentar tamanho do texto">A+</button>
+        <button id="btn-diminuir" aria-label="Diminuir tamanho do texto">A-</button>
+    </div>
+
+    <header role="banner">
+        <div class="container header-wrapper">
+            <div class="logo">Agro<span>Sustentável</span></div>
+            <nav role="navigation" aria-label="Menu Principal">
+                <ul class="nav-links">
+                    <li><a href="#sobre">Sobre</a></li>
+                    <li><a href="#solucoes">Soluções</a></li>
+                    <li><a href="#impacto">Impacto</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main id="conteudo-principal" role="main">
+        
+        <section class="hero" aria-labelledby="hero-titulo">
+            <div class="container reveal">
+                <h1 id="hero-titulo">Tecnologia que alimenta o amanhã de forma sustentável</h1>
+                <p>Unimos inteligência de dados, IoT e práticas regenerativas para transformar o agronegócio.</p>
+                <a href="#solucoes" class="btn-primary">Conheça Nossas Soluções</a>
+            </div>
+        </section>
+
+        <section id="solucoes" class="secao-solucoes" aria-labelledby="solucoes-titulo">
+            <div class="container">
+                <h2 id="solucoes-titulo" class="reveal">Nossas Soluções Tecnológicas</h2>
+                <div id="grid-solucoes" class="grid-cards reveal">
+                    </div>
+            </div>
+        </section>
+
+        <section id="impacto" class="secao-faq" aria-labelledby="faq-titulo">
+            <div class="container reveal">
+                <h2 id="faq-titulo">Perguntas Frequentes & Impacto</h2>
+                <div class="acordeao-container">
+                    
+                    <div class="acordeao-item">
+                        <button class="acordeao-header" aria-expanded="false" aria-controls="resposta-1">
+                            Como a IA reduz o desperdício de água?
+                        </button>
+                        <div id="resposta-1" class="acordeao-conteudo" hidden>
+                            <p>Utilizamos sensores de umidade no solo conectados a algoritmos preditivos que acionam a irrigação apenas quando e onde é estritamente necessário.</p>
+                        </div>
+                    </div>
+
+                    <div class="acordeao-item">
+                        <button class="acordeao-header" aria-expanded="false" aria-controls="resposta-2">
+                            O sistema é compatível com pequenas propriedades?
+                        </button>
+                        <div id="resposta-2" class="acordeao-conteudo" hidden>
+                            <p>Sim! Nossa arquitetura é modular e escalável, adaptando-se desde a agricultura familiar até grandes latifúndios produtivos.</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer role="contentinfo">
+        <div class="container">
+            <p>&copy; 2026 AgroSustentável. Todos os direitos reservados. Foco em UX e Acessibilidade.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
