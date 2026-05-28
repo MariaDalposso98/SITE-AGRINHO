@@ -1,74 +1,69 @@
 
-/* ==========================================================================
-   1. GESTÃO DE DADOS (Renderização Dinâmica)
-   ========================================================================== */
-const dadosSolucoes = [
-    {
-        titulo: "Sensores IoT",
-        descricao: "Monitoramento de umidade, nutrientes e temperatura do solo em tempo real."
-    },
-    {
-        titulo: "IA Preditiva",
-        descricao: "Algoritmos que prevêem pragas e otimizam a colheita reduzindo insumos."
-    },
-    {
-        titulo: "Drones de Precisão",
-        descricao: "Mapeamento aéreo térmico e aplicação localizada de biofertilizantes."
-    }
+// 1. GESTÃO DE DADOS (DATA LAYER)
+const servicosData = [
+    { title: "Gestão Hídrica", desc: "Sensores de umidade que economizam até 40% de água." },
+    { title: "Análise de Solo", desc: "Relatórios químicos automatizados via nuvem." },
+    { title: "Drone Scout", desc: "Vigilância aérea para identificação precoce de pragas." }
 ];
 
-function renderizarCards() {
-    const container = document.getElementById('grid-solucoes');
-    if (!container) return;
-
-    container.innerHTML = dadosSolucoes.map(solucao => `
+// 2. RENDERIZAÇÃO DINÂMICA
+function renderCards() {
+    const container = document.getElementById('cards-container');
+    container.innerHTML = servicosData.map(item => `
         <article class="card">
-            <h3>${solucao.titulo}</h3>
-            <p>${solucao.descricao}</p>
+            <h3>${item.title}</h3>
+            <p>${item.desc}</p>
         </article>
     `).join('');
 }
 
-/* ==========================================================================
-   2. ACESSIBILIDADE: FONTE & CONTRASTE
-   ========================================================================== */
-let tamanhoFonteAtual = 100; // Percentual da fonte base
+// 3. ACESSIBILIDADE: CONTROLE DE FONTE
+let currentFontSize = 16;
+const body = document.body;
 
-function inicializarAcessibilidade() {
-    const btnContraste = document.getElementById('btn-contraste');
-    const btnAumentar = document.getElementById('btn-aumentar');
-    const btnDiminuir = document.getElementById('btn-diminuir');
+document.getElementById('increase-font').addEventListener('click', () => {
+    currentFontSize += 2;
+    body.style.fontSize = currentFontSize + 'px';
+});
 
-    // Chaveador de Contraste
-    btnContraste?.addEventListener('click', () => {
-        document.body.classList.toggle('high-contrast');
-        // Boa prática UX: Notificar o estado para leitores de tela se necessário
-        const ativo = document.body.classList.contains('high-contrast');
-        btnContraste.setAttribute('aria-pressed', ativo);
+document.getElementById('decrease-font').addEventListener('click', () => {
+    if(currentFontSize > 12) {
+        currentFontSize -= 2;
+        body.style.fontSize = currentFontSize + 'px';
+    }
+});
+
+// 4. MODO ALTO CONTRASTE
+document.getElementById('toggle-contrast').addEventListener('click', () => {
+    body.classList.toggle('high-contrast');
+});
+
+// 5. ACORDEÃO (EXPANDABLES)
+document.querySelectorAll('.accordion-header').forEach(header => {
+    header.addEventListener('click', () => {
+        const content = header.nextElementSibling;
+        const isExpanded = header.getAttribute('aria-expanded') === 'true';
+        
+        header.setAttribute('aria-expanded', !isExpanded);
+        content.classList.toggle('active');
     });
+});
 
-    // Controle de Tamanho de Fonte
-    btnAumentar?.addEventListener('click', () => {
-        if(tamanhoFonteAtual < 140) { // Limite máximo seguro por quebra de layout
-            tamanhoFonteAtual += 10;
-            document.documentElement.style.fontSize = `${tamanhoFonteAtual}%`;
-        }
-    });
-
-    btnDiminuir?.addEventListener('click', () => {
-        if(tamanhoFonteAtual > 80) { // Limite mínimo
-            tamanhoFonteAtual -= 10;
-            document.documentElement.style.fontSize = `${tamanhoFonteAtual}%`;
+// 6. SCROLL REVEAL (VISÃO SISTÊMICA)
+function reveal() {
+    const reveals = document.querySelectorAll('.scroll-reveal');
+    reveals.forEach(el => {
+        const windowHeight = window.innerHeight;
+        const elementTop = el.getBoundingClientRect().top;
+        if (elementTop < windowHeight - 100) {
+            el.classList.add('visible');
         }
     });
 }
 
-/* ==========================================================================
-   3. COMPONENTES: ACORDEÃO (Expandables)
-   ========================================================================== */
-function inicializarAcordeao() {
-    const headers = document.querySelectorAll('.acordeao-header');
-
-    headers.forEach(header => {
-        header.addEventListener('click', () => {
-            const painel = document.getElementById(header.getAttribute
+// Inicialização
+window.addEventListener('scroll', reveal);
+window.onload = () => {
+    renderCards();
+    reveal();
+};
