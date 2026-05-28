@@ -8,230 +8,170 @@
     <title>Agro Forte | Futuro Sustentável</title>
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <a href="#main-content" class="skip-link" aria-label="Pular para conteúdo principal">Pular para conteúdo</a>
+    <a href="#main-content" class="skip-link" aria-label="Pular para conteúdo principal">Ir para o conteúdo</a>
     
-    <header role="banner" aria-label="Cabeçalho do site">
+    <header class="header" role="banner">
         <nav class="navbar" role="navigation" aria-label="Navegação principal">
             <div class="container nav-container">
                 <a href="#" class="logo" aria-label="Agro Forte - Página inicial">
                     <img src="https://images.unsplash.com/photo-1574943320219-553eb213f72d?w=40&h=40&fit=crop" alt="Logo Agro Forte" class="logo-img">
-                    <span>Agro Forte</span>
+                    <span class="logo-text">Agro Forte</span>
                 </a>
                 <ul class="nav-menu" role="menubar">
                     <li role="none"><a href="#sobre" role="menuitem">Sobre</a></li>
                     <li role="none"><a href="#praticas" role="menuitem">Práticas</a></li>
                     <li role="none"><a href="#tecnologias" role="menuitem">Tecnologias</a></li>
-                    <li role="none"><a href="#numeros" role="menuitem">Resultados</a></li>
                     <li role="none"><a href="#depoimentos" role="menuitem">Depoimentos</a></li>
                     <li role="none"><a href="#contato" role="menuitem">Contato</a></li>
                 </ul>
-                <div class="accessibility-controls">
-                    <button id="font-increase" aria-label="Aumentar fonte" title="Aumentar fonte">A+</button>
-                    <button id="font-decrease" aria-label="Diminuir fonte" title="Diminuir fonte">A-</button>
-                    <button id="contrast-toggle" aria-label="Alternar alto contraste" title="Alto contraste">◐</button>
+                <div class="nav-actions">
+                    <div class="accessibility-controls">
+                        <button id="font-increase" aria-label="Aumentar fonte" title="Aumentar fonte">A+</button>
+                        <button id="font-decrease" aria-label="Diminuir fonte" title="Diminuir fonte">A-</button>
+                        <button id="contrast-toggle" aria-label="Alto contraste" title="Alto contraste">◐</button>
+                    </div>
+                    <button class="mobile-menu-btn" aria-label="Abrir menu" aria-expanded="false">
+                        <span></span><span></span><span></span>
+                    </button>
                 </div>
-                <button class="mobile-menu-btn" aria-label="Menu mobile" aria-expanded="false">
-                    <span></span><span></span><span></span>
-                </button>
             </div>
         </nav>
     </header>
 
     <main id="main-content">
-        <!-- Hero Section com Parallax -->
-        <section class="hero" aria-label="Seção principal">
+        <!-- Hero -->
+        <section class="hero">
             <div class="hero-bg">
-                <img src="https://images.unsplash.com/photo-1625246333195-78d9c38ad449?w=1920&h=800&fit=crop" alt="Campo agrícola sustentável" class="hero-bg-img">
+                <img src="https://images.unsplash.com/photo-1625246333195-78d9c38ad449?w=1920&h=900&fit=crop" alt="" class="hero-bg-img" aria-hidden="true">
             </div>
-            <div class="container">
-                <div class="hero-content">
-                    <h1 class="hero-title animate-reveal">Produzindo Alimentos,<br>Preservando o Futuro</h1>
-                    <p class="hero-subtitle animate-reveal">Tecnologia e sustentabilidade andam juntas no campo brasileiro. Conheça as práticas que estão revolucionando o agronegócio.</p>
-                    <div class="hero-buttons animate-reveal">
-                        <button class="cta-button primary">Conheça Nossas Soluções</button>
-                        <button class="cta-button secondary">Assista ao Vídeo ▶</button>
-                    </div>
-                    <div class="hero-stats animate-reveal">
-                        <div class="stat">
-                            <span class="stat-number">40%</span>
-                            <span class="stat-label">Redução no uso de água</span>
-                        </div>
-                        <div class="stat">
-                            <span class="stat-number">+500</span>
-                            <span class="stat-label">Produtores atendidos</span>
-                        </div>
-                        <div class="stat">
-                            <span class="stat-number">98%</span>
-                            <span class="stat-label">Satisfação dos clientes</span>
-                        </div>
+            <div class="container hero-container">
+                <div class="hero-content animate-reveal">
+                    <h1 class="hero-title">Produzindo alimentos,<br>preservando o amanhã</h1>
+                    <p class="hero-subtitle">Unimos tecnologia e sustentabilidade para fortalecer o agronegócio brasileiro com responsabilidade ambiental.</p>
+                    <div class="hero-cta">
+                        <a href="#contato" class="btn btn-primary">Solicitar contato</a>
+                        <a href="#praticas" class="btn btn-outline">Conheça nossas práticas</a>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Sobre Section -->
-        <section id="sobre" class="about" aria-labelledby="sobre-heading">
+        <!-- Sobre -->
+        <section id="sobre" class="about section" aria-labelledby="sobre-heading">
             <div class="container">
-                <h2 id="sobre-heading" class="section-title animate-reveal">Nossa Missão: Equilibrar Produção e Preservação</h2>
-                <p class="section-description animate-reveal">A Agro Forte nasceu da necessidade de transformar o agronegócio brasileiro em um modelo de sustentabilidade e inovação. Trabalhamos lado a lado com produtores rurais para implementar práticas que aumentam a produtividade enquanto protegem os recursos naturais.</p>
-                
-                <div class="about-grid" id="about-grid">
-                    <!-- Cards serão renderizados via JS -->
+                <h2 id="sobre-heading" class="section-title animate-reveal">Nossa missão é equilibrar produtividade e preservação</h2>
+                <p class="section-subtitle animate-reveal">A Agro Forte atua ao lado de produtores rurais para implementar soluções que aumentam a eficiência no campo e protegem os recursos naturais.</p>
+                <div class="about-grid" id="about-grid"></div>
+            </div>
+        </section>
+
+        <!-- Práticas (tabs) -->
+        <section id="praticas" class="practices section section-alt" aria-labelledby="praticas-heading">
+            <div class="container">
+                <h2 id="praticas-heading" class="section-title animate-reveal">Práticas sustentáveis que geram resultado</h2>
+                <div class="tabs" role="tablist" aria-label="Práticas sustentáveis">
+                    <div class="tabs-nav" id="tabs-nav"></div>
+                    <div class="tabs-content" id="tabs-content"></div>
                 </div>
             </div>
         </section>
 
-        <!-- Práticas Section com Tabs -->
-        <section id="praticas" class="practices" aria-labelledby="praticas-heading">
+        <!-- Tecnologias -->
+        <section id="tecnologias" class="technologies section" aria-labelledby="tecnologias-heading">
             <div class="container">
-                <h2 id="praticas-heading" class="section-title animate-reveal">Práticas Sustentáveis que Transformam</h2>
-                <p class="section-description animate-reveal">Descubra como técnicas modernas podem revolucionar sua produção agrícola enquanto preservam o meio ambiente.</p>
-                
-                <div class="tabs-container" role="tablist" aria-label="Práticas sustentáveis">
-                    <div class="tabs-nav" id="tabs-nav">
-                        <!-- Tabs serão renderizadas via JS -->
-                    </div>
-                    <div class="tabs-content" id="tabs-content">
-                        <!-- Conteúdo das tabs será renderizado via JS -->
-                    </div>
-                </div>
+                <h2 id="tecnologias-heading" class="section-title animate-reveal">Tecnologia aplicada ao campo</h2>
+                <div class="tech-grid" id="tech-grid"></div>
             </div>
         </section>
 
-        <!-- Tecnologias Section -->
-        <section id="tecnologias" class="technologies" aria-labelledby="tecnologias-heading">
+        <!-- Depoimentos (carrossel) -->
+        <section id="depoimentos" class="testimonials section section-alt" aria-labelledby="depoimentos-heading">
             <div class="container">
-                <h2 id="tecnologias-heading" class="section-title animate-reveal">Tecnologias que Impulsionam o Agro Sustentável</h2>
-                <div class="tech-grid" id="tech-grid">
-                    <!-- Cards de tecnologia serão renderizados via JS -->
-                </div>
-            </div>
-        </section>
-
-        <!-- Seção de Números (Contadores) -->
-        <section id="numeros" class="numbers" aria-labelledby="numeros-heading">
-            <div class="container">
-                <h2 id="numeros-heading" class="section-title animate-reveal">Nossos Resultados em Números</h2>
-                <div class="numbers-grid" id="numbers-grid">
-                    <!-- Contadores renderizados via JS -->
-                </div>
-            </div>
-        </section>
-
-        <!-- Carrossel de Depoimentos -->
-        <section id="depoimentos" class="testimonials" aria-labelledby="depoimentos-heading">
-            <div class="container">
-                <h2 id="depoimentos-heading" class="section-title animate-reveal">Quem Confia na Agro Forte</h2>
-                <div class="carousel" aria-roledescription="carrossel" aria-label="Depoimentos de agricultores">
-                    <div class="carousel-container" id="carousel-container">
-                        <!-- Cards serão renderizados via JS -->
-                    </div>
+                <h2 id="depoimentos-heading" class="section-title animate-reveal">Quem confia na Agro Forte</h2>
+                <div class="carousel" aria-roledescription="carrossel" aria-label="Depoimentos">
+                    <div class="carousel-track" id="carousel-track"></div>
                     <div class="carousel-controls">
                         <button class="carousel-btn prev" aria-label="Depoimento anterior">←</button>
-                        <div class="carousel-dots" id="carousel-dots">
-                            <!-- Dots serão renderizados via JS -->
-                        </div>
+                        <div class="carousel-dots" id="carousel-dots"></div>
                         <button class="carousel-btn next" aria-label="Próximo depoimento">→</button>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- FAQ Accordion Section -->
-        <section id="faq" class="faq" aria-labelledby="faq-heading">
+        <!-- FAQ (acordeão) -->
+        <section id="faq" class="faq section" aria-labelledby="faq-heading">
             <div class="container">
-                <h2 id="faq-heading" class="section-title animate-reveal">Dúvidas Frequentes sobre Agricultura Sustentável</h2>
-                <div class="accordion" id="accordion" role="list" aria-label="Perguntas frequentes">
-                    <!-- Items serão renderizados via JS -->
-                </div>
+                <h2 id="faq-heading" class="section-title animate-reveal">Perguntas frequentes</h2>
+                <div class="accordion" id="accordion" role="list" aria-label="Perguntas frequentes"></div>
             </div>
         </section>
 
-        <!-- Contato Section -->
-        <section id="contato" class="contact" aria-labelledby="contato-heading">
+        <!-- Contato -->
+        <section id="contato" class="contact section section-alt" aria-labelledby="contato-heading">
             <div class="container">
                 <div class="contact-grid">
                     <div class="contact-info animate-reveal">
-                        <h2 id="contato-heading" class="section-title">Vamos Conversar?</h2>
-                        <p>Estamos prontos para ajudar você a transformar sua produção agrícola em um modelo sustentável e lucrativo.</p>
-                        <div class="contact-details">
-                            <div class="contact-item">
-                                <img src="https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1?w=24&h=24&fit=crop" alt="" aria-hidden="true" class="contact-icon">
-                                <span>contato@agroforte.com.br</span>
-                            </div>
-                            <div class="contact-item">
-                                <img src="https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1?w=24&h=24&fit=crop" alt="" aria-hidden="true" class="contact-icon">
-                                <span>(11) 99999-9999</span>
-                            </div>
-                            <div class="contact-item">
-                                <img src="https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1?w=24&h=24&fit=crop" alt="" aria-hidden="true" class="contact-icon">
-                                <span>Av. Paulista, 1000 - São Paulo/SP</span>
-                            </div>
-                        </div>
+                        <h2 id="contato-heading" class="section-title">Vamos conversar?</h2>
+                        <p>Nossa equipe está pronta para entender sua operação e propor as melhores soluções em sustentabilidade.</p>
+                        <ul class="contact-list">
+                            <li>contato@agroforte.com.br</li>
+                            <li>(11) 99999-9999</li>
+                            <li>Av. Paulista, 1000 – São Paulo/SP</li>
+                        </ul>
                     </div>
-                    
                     <form class="contact-form animate-reveal" aria-label="Formulário de contato">
                         <div class="form-group">
-                            <label for="nome">Nome Completo</label>
-                            <input type="text" id="nome" name="nome" required aria-required="true" placeholder="Seu nome">
+                            <label for="nome">Nome completo</label>
+                            <input type="text" id="nome" name="nome" required placeholder="Seu nome">
                         </div>
                         <div class="form-group">
                             <label for="email">E-mail</label>
-                            <input type="email" id="email" name="email" required aria-required="true" placeholder="seu@email.com">
+                            <input type="email" id="email" name="email" required placeholder="seu@email.com">
                         </div>
                         <div class="form-group">
-                            <label for="telefone">Telefone</label>
-                            <input type="tel" id="telefone" name="telefone" placeholder="(00) 00000-0000">
+                            <label for="mensagem">Mensagem</label>
+                            <textarea id="mensagem" name="mensagem" rows="4" required placeholder="Como podemos ajudar?"></textarea>
                         </div>
-                        <div class="form-group">
-                            <label for="mensagem">Como podemos ajudar?</label>
-                            <textarea id="mensagem" name="mensagem" rows="4" required aria-required="true" placeholder="Descreva sua necessidade..."></textarea>
-                        </div>
-                        <button type="submit" class="submit-btn">Solicitar Contato</button>
+                        <button type="submit" class="btn btn-primary btn-block">Enviar mensagem</button>
                     </form>
                 </div>
             </div>
         </section>
     </main>
 
-    <footer role="contentinfo" aria-label="Rodapé">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <img src="https://images.unsplash.com/photo-1574943320219-553eb213f72d?w=40&h=40&fit=crop" alt="Logo Agro Forte" class="footer-logo">
-                    <h3>Agro Forte</h3>
-                    <p>Equilíbrio entre produção e meio ambiente</p>
-                </div>
-                <div class="footer-section">
-                    <h4>Links Rápidos</h4>
-                    <ul>
-                        <li><a href="#sobre">Sobre Nós</a></li>
-                        <li><a href="#praticas">Práticas</a></li>
-                        <li><a href="#tecnologias">Tecnologias</a></li>
-                        <li><a href="#numeros">Resultados</a></li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h4>Redes Sociais</h4>
-                    <div class="social-links">
-                        <a href="#" aria-label="Instagram"><img src="https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=32&h=32&fit=crop" alt="Instagram"></a>
-                        <a href="#" aria-label="LinkedIn"><img src="https://images.unsplash.com/photo-1611944212129-29977ae1398c?w=32&h=32&fit=crop" alt="LinkedIn"></a>
-                        <a href="#" aria-label="YouTube"><img src="https://images.unsplash.com/photo-1611162616475-46b635cb6868?w=32&h=32&fit=crop" alt="YouTube"></a>
-                    </div>
-                </div>
+    <footer class="footer" role="contentinfo">
+        <div class="container footer-container">
+            <div class="footer-brand">
+                <img src="https://images.unsplash.com/photo-1574943320219-553eb213f72d?w=40&h=40&fit=crop" alt="Logo Agro Forte" class="footer-logo">
+                <p>Agro Forte © 2024</p>
+                <p class="footer-tagline">Equilíbrio entre produção e meio ambiente</p>
             </div>
-            <div class="footer-bottom">
-                <p>&copy; 2024 Agro Forte. Todos os direitos reservados.</p>
+            <div class="footer-links">
+                <h4>Links</h4>
+                <ul>
+                    <li><a href="#sobre">Sobre</a></li>
+                    <li><a href="#praticas">Práticas</a></li>
+                    <li><a href="#tecnologias">Tecnologias</a></li>
+                    <li><a href="#depoimentos">Depoimentos</a></li>
+                    <li><a href="#contato">Contato</a></li>
+                </ul>
+            </div>
+            <div class="footer-social">
+                <h4>Redes sociais</h4>
+                <div class="social-icons">
+                    <a href="#" aria-label="Instagram"><img src="https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=32&h=32&fit=crop" alt="Instagram"></a>
+                    <a href="#" aria-label="LinkedIn"><img src="https://images.unsplash.com/photo-1611944212129-29977ae1398c?w=32&h=32&fit=crop" alt="LinkedIn"></a>
+                    <a href="#" aria-label="YouTube"><img src="https://images.unsplash.com/photo-1611162616475-46b635cb6868?w=32&h=32&fit=crop" alt="YouTube"></a>
+                </div>
             </div>
         </div>
     </footer>
 
-    <!-- Botão Voltar ao Topo -->
     <button id="back-to-top" aria-label="Voltar ao topo" title="Voltar ao topo">↑</button>
-
     <script src="script.js"></script>
 </body>
 </html>
