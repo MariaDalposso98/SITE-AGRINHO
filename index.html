@@ -4,387 +4,162 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Agroforte - O Futuro Sustentável da Agricultura</title>
+    <meta name="description" content="Agro Forte - Equilíbrio entre produção e meio ambiente para um futuro sustentável">
+    <title>Agro Forte | Futuro Sustentável</title>
+    <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- Navbar -->
-    <nav>
-        <div class="nav-container">
-            <a href="#" class="logo">
-                <div class="logo-leaf">🌿</div>
-                Agro<span>forte</span>
-            </a>
-            <ul class="nav-links">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">Sobre</a></li>
-                <li><a href="#mission">Missão</a></li>
-                <li><a href="#initiatives">Iniciativas</a></li>
-                <li><a href="#blog">Blog</a></li>
-                <li><a href="#contact">Contato</a></li>
-            </ul>
-            <a href="#contact" class="cta-button">Fale Conosco</a>
-        </div>
-    </nav>
-
-    <!-- Hero Section -->
-    <section id="home" class="hero">
-        <div class="hero-content reveal">
-            <h1>Agroforte: O Futuro</h1>
-            <p class="subtitle">Sustentável da Agricultura</p>
-            <p>Integramos alta produtividade agrícola com respeito ao meio ambiente, construindo um agronegócio responsável para as próximas gerações.</p>
-            
-            <div class="hero-buttons">
-                <a href="#initiatives" class="btn-primary">Saiba mais sobre nossas práticas sustentáveis</a>
-                <a href="#contact" class="btn-secondary">Ver Iniciativas</a>
+    <a href="#main-content" class="skip-link" aria-label="Pular para conteúdo principal">Pular para conteúdo</a>
+    
+    <header role="banner" aria-label="Cabeçalho do site">
+        <nav class="navbar" role="navigation" aria-label="Navegação principal">
+            <div class="container nav-container">
+                <a href="#" class="logo" aria-label="Agro Forte - Página inicial">
+                    <span class="logo-icon">🌱</span>
+                    <span>Agro Forte</span>
+                </a>
+                <ul class="nav-menu" role="menubar">
+                    <li role="none"><a href="#sobre" role="menuitem">Sobre</a></li>
+                    <li role="none"><a href="#praticas" role="menuitem">Práticas</a></li>
+                    <li role="none"><a href="#depoimentos" role="menuitem">Depoimentos</a></li>
+                    <li role="none"><a href="#contato" role="menuitem">Contato</a></li>
+                </ul>
+                <div class="accessibility-controls">
+                    <button id="font-increase" aria-label="Aumentar fonte" title="Aumentar fonte">A+</button>
+                    <button id="font-decrease" aria-label="Diminuir fonte" title="Diminuir fonte">A-</button>
+                    <button id="contrast-toggle" aria-label="Alternar alto contraste" title="Alto contraste">◐</button>
+                </div>
+                <button class="mobile-menu-btn" aria-label="Menu mobile" aria-expanded="false">
+                    <span></span><span></span><span></span>
+                </button>
             </div>
+        </nav>
+    </header>
 
-            <div class="stats">
-                <div class="stat reveal">
-                    <div class="stat-number">15+</div>
-                    <div class="stat-label">Anos de experiência</div>
+    <main id="main-content">
+        <!-- Hero Section -->
+        <section class="hero" aria-label="Seção principal">
+            <div class="container">
+                <div class="hero-content">
+                    <h1 class="hero-title animate-reveal">Agro Forte:<br>Futuro Sustentável</h1>
+                    <p class="hero-subtitle animate-reveal">Equilíbrio perfeito entre produção e meio ambiente</p>
+                    <button class="cta-button animate-reveal" aria-label="Começar agora">Comece Agora</button>
                 </div>
-                <div class="stat reveal">
-                    <div class="stat-number">50mil</div>
-                    <div class="stat-label">Hectares operados</div>
-                </div>
-                <div class="stat reveal">
-                    <div class="stat-number">30%</div>
-                    <div class="stat-label">Redução de carbono</div>
-                </div>
-                <div class="stat reveal">
-                    <div class="stat-number">200+</div>
-                    <div class="stat-label">Famílias beneficiadas</div>
+                <div class="hero-image animate-reveal">
+                    <div class="hero-visual">
+                        <div class="circle circle-1"></div>
+                        <div class="circle circle-2"></div>
+                        <div class="circle circle-3"></div>
+                        <span class="hero-emoji">🌍🌱🚜</span>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- About Section -->
-    <section id="about">
-        <div class="container">
-            <div class="section-header reveal">
-                <span class="section-label">Sobre</span>
-                <h2>Quem Somos</h2>
-                <div class="section-divider"></div>
-                <p>A Agroforte é uma empresa inovadora que demonstra ser possível produzir alimentos em larga escala mantendo a rentabilidade e gerando impacto ambiental positivo.</p>
-            </div>
-
-            <div class="about-grid">
-                <div class="about-image reveal">
-                    <img src="https://d2xsxph8kpxj0f.cloudfront.net/310519663429436565/cgDbqRifHecKnZKGCxCEgk/agroforte-about-SU6ZLwAYFhM5s8ZbuhaCnh.webp" alt="Sobre Agroforte">
+        <!-- Sobre Section -->
+        <section id="sobre" class="about" aria-labelledby="sobre-heading">
+            <div class="container">
+                <h2 id="sobre-heading" class="section-title animate-reveal">Nossa Missão</h2>
+                <div class="about-grid">
+                    <article class="about-card animate-reveal">
+                        <div class="about-icon">🌿</div>
+                        <h3>Sustentabilidade</h3>
+                        <p>Produzir alimentos preservando recursos naturais para as próximas gerações.</p>
+                    </article>
+                    <article class="about-card animate-reveal">
+                        <div class="about-icon">💧</div>
+                        <h3>Água</h3>
+                        <p>Gestão inteligente dos recursos hídricos com tecnologias de irrigação eficiente.</p>
+                    </article>
+                    <article class="about-card animate-reveal">
+                        <div class="about-icon">🔬</div>
+                        <h3>Inovação</h3>
+                        <p>Tecnologia de ponta aliada ao conhecimento tradicional do campo.</p>
+                    </article>
                 </div>
-                <div class="about-content reveal">
-                    <h3>Nossa Jornada</h3>
-                    <p>Fundada em 2010, a Agroforte nasceu da convicção de que a agricultura brasileira poderia ser mais sustentável sem sacrificar produtividade. Ao longo de 15 anos, desenvolvemos práticas inovadoras que equilibram eficiência econômica com responsabilidade ambiental.</p>
-                    
-                    <div class="values-grid">
-                        <div class="value-card reveal">
-                            <h4>Inovação</h4>
-                            <p>Tecnologia de ponta para agricultura de precisão</p>
+            </div>
+        </section>
+
+        <!-- Práticas Section com Tabs -->
+        <section id="praticas" class="practices" aria-labelledby="praticas-heading">
+            <div class="container">
+                <h2 id="praticas-heading" class="section-title animate-reveal">Práticas Sustentáveis</h2>
+                <div class="tabs-container" role="tablist" aria-label="Práticas sustentáveis">
+                    <div class="tabs-nav" id="tabs-nav">
+                        <!-- Tabs serão renderizadas via JS -->
+                    </div>
+                    <div class="tabs-content" id="tabs-content">
+                        <!-- Conteúdo das tabs será renderizado via JS -->
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Carrossel Section -->
+        <section id="depoimentos" class="testimonials" aria-labelledby="depoimentos-heading">
+            <div class="container">
+                <h2 id="depoimentos-heading" class="section-title animate-reveal">Depoimentos</h2>
+                <div class="carousel" aria-roledescription="carrossel" aria-label="Depoimentos de agricultores">
+                    <div class="carousel-container" id="carousel-container">
+                        <!-- Cards serão renderizados via JS -->
+                    </div>
+                    <div class="carousel-controls">
+                        <button class="carousel-btn prev" aria-label="Depoimento anterior">←</button>
+                        <div class="carousel-dots" id="carousel-dots">
+                            <!-- Dots serão renderizados via JS -->
                         </div>
-                        <div class="value-card reveal">
-                            <h4>Ética</h4>
-                            <p>Transparência em todas as operações</p>
-                        </div>
-                        <div class="value-card reveal">
-                            <h4>Sustentabilidade</h4>
-                            <p>Preservação ambiental como prioridade</p>
-                        </div>
-                        <div class="value-card reveal">
-                            <h4>Compromisso</h4>
-                            <p>Com as futuras gerações</p>
-                        </div>
+                        <button class="carousel-btn next" aria-label="Próximo depoimento">→</button>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Mission Section -->
-    <section id="mission">
-        <div class="container">
-            <div class="section-header reveal">
-                <span class="section-label">Nossa Missão</span>
-                <h2>Práticas Sustentáveis</h2>
-                <div class="section-divider"></div>
-                <p>Utilizamos tecnologias avançadas e práticas comprovadas para produzir com eficiência e responsabilidade ambiental.</p>
-            </div>
-
-            <div class="mission-grid">
-                <div class="mission-card reveal">
-                    <h4>🌾 Agricultura de Precisão</h4>
-                    <p>Sensores e IA para otimizar uso de água e insumos, reduzindo desperdício em 40%.</p>
-                </div>
-                <div class="mission-card reveal">
-                    <h4>💧 Gestão Hídrica</h4>
-                    <p>Sistemas inteligentes de irrigação que economizam água mantendo produtividade.</p>
-                </div>
-                <div class="mission-card reveal">
-                    <h4>🔄 Rotação de Culturas</h4>
-                    <p>Diversificação de plantios para manter saúde do solo e biodiversidade.</p>
-                </div>
-                <div class="mission-card reveal">
-                    <h4>⚡ Energia Renovável</h4>
-                    <p>Painéis solares e biogás reduzem dependência de combustíveis fósseis.</p>
-                </div>
-                <div class="mission-card reveal">
-                    <h4>🌍 Sequestro de Carbono</h4>
-                    <p>Práticas que capturam CO2 e geram créditos de carbono no mercado.</p>
-                </div>
-                <div class="mission-card reveal">
-                    <h4>🌳 Integração Lavoura-Floresta</h4>
-                    <p>Combinação de produção agrícola com preservação de mata nativa.</p>
+        <!-- FAQ Accordion Section -->
+        <section id="faq" class="faq" aria-labelledby="faq-heading">
+            <div class="container">
+                <h2 id="faq-heading" class="section-title animate-reveal">Dúvidas Frequentes</h2>
+                <div class="accordion" id="accordion" role="list" aria-label="Perguntas frequentes">
+                    <!-- Items serão renderizados via JS -->
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Initiatives Section -->
-    <section id="initiatives">
-        <div class="container">
-            <div class="section-header reveal">
-                <span class="section-label">Sustentabilidade em Ação</span>
-                <h2>Projetos para um Agro Sustentável</h2>
-                <div class="section-divider"></div>
-                <p>Cada iniciativa é pensada para equilibrar produtividade e preservação, gerando valor econômico e ambiental.</p>
-            </div>
-
-            <div class="initiatives-grid">
-                <div class="initiative-card reveal">
-                    <div class="initiative-icon">🌲</div>
-                    <h3>Reflorestamento Nativo</h3>
-                    <p>Programa de replantio de espécies nativas do Cerrado e Mata Atlântica em áreas degradadas.</p>
-                    <div class="initiative-metric">
-                        <span class="metric-value">12.000</span>
-                        <span class="metric-label">ha reflorestados</span>
-                    </div>
-                </div>
-
-                <div class="initiative-card reveal">
-                    <div class="initiative-icon">⚡</div>
-                    <h3>Energia Renovável</h3>
-                    <p>Instalação de usinas solares e sistemas de biogás nas propriedades.</p>
-                    <div class="initiative-metric">
-                        <span class="metric-value">80%</span>
-                        <span class="metric-label">energia renovável</span>
-                    </div>
-                </div>
-
-                <div class="initiative-card reveal">
-                    <div class="initiative-icon">♻️</div>
-                    <h3>Redução de Carbono</h3>
-                    <p>Implementação de práticas de plantio direto e compostagem.</p>
-                    <div class="initiative-metric">
-                        <span class="metric-value">30%</span>
-                        <span class="metric-label">menos emissões</span>
-                    </div>
-                </div>
-
-                <div class="initiative-card reveal">
-                    <div class="initiative-icon">💧</div>
-                    <h3>Proteção de Nascentes</h3>
-                    <p>Cercamento e recuperação de áreas de preservação permanente.</p>
-                    <div class="initiative-metric">
-                        <span class="metric-value">340</span>
-                        <span class="metric-label">nascentes protegidas</span>
-                    </div>
-                </div>
-
-                <div class="initiative-card reveal">
-                    <div class="initiative-icon">🦅</div>
-                    <h3>Biodiversidade</h3>
-                    <p>Monitoramento contínuo da fauna e flora nas áreas de preservação.</p>
-                    <div class="initiative-metric">
-                        <span class="metric-value">150+</span>
-                        <span class="metric-label">espécies monitoradas</span>
-                    </div>
-                </div>
-
-                <div class="initiative-card reveal">
-                    <div class="initiative-icon">📊</div>
-                    <h3>Agricultura de Baixo Carbono</h3>
-                    <p>Participação no Programa ABC+ com certificação de créditos de carbono.</p>
-                    <div class="initiative-metric">
-                        <span class="metric-value">R$ 2M+</span>
-                        <span class="metric-label">em créditos de carbono</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Blog Section -->
-    <section id="blog">
-        <div class="container">
-            <div class="section-header reveal">
-                <span class="section-label">Blog</span>
-                <h2>Insights sobre <em>Sustentabilidade</em></h2>
-                <div class="section-divider"></div>
-                <p>Artigos, análises e novidades sobre agricultura sustentável, tecnologia e meio ambiente.</p>
-            </div>
-
-            <div class="blog-grid">
-                <div class="blog-featured reveal">
-                    <img src="https://d2xsxph8kpxj0f.cloudfront.net/310519663429436565/cgDbqRifHecKnZKGCxCEgk/agroforte-blog-4uk323gxgCNKZyU5Yuus8Z.webp" alt="Blog">
-                    <div class="blog-featured-content">
-                        <span class="blog-category">Tecnologia</span>
-                        <h3>A importância da Agricultura de Precisão para o Futuro Sustentável</h3>
-                        <div class="blog-meta">
-                            <span>📅 08 Mar 2026</span>
-                            <span>⏱️ 6 min</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="blog-posts">
-                    <div class="blog-card reveal">
-                        <span class="blog-category">Sustentabilidade</span>
-                        <h4>Como a Agroforte Contribui para a Redução da Pegada de Carbono</h4>
-                        <p>Conheça as práticas que nos permitiram reduzir em 30% as emissões de gases de efeito estufa.</p>
-                        <div class="blog-meta">
-                            <span>📅 01 Mar 2026</span>
-                            <span>⏱️ 5 min</span>
-                        </div>
-                    </div>
-
-                    <div class="blog-card reveal">
-                        <span class="blog-category">Mercado</span>
-                        <h4>Desafios e Oportunidades para o Agro no Século XXI</h4>
-                        <p>Uma análise aprofundada sobre as tendências que moldarão o agronegócio.</p>
-                        <div class="blog-meta">
-                            <span>📅 22 Fev 2026</span>
-                            <span>⏱️ 8 min</span>
-                        </div>
-                    </div>
-
-                    <div class="blog-card reveal">
-                        <span class="blog-category">Inovação</span>
-                        <h4>Integração Lavoura-Pecuária-Floresta: O Modelo do Futuro</h4>
-                        <p>O sistema ILPF está revolucionando a forma como produtores utilizam a terra.</p>
-                        <div class="blog-meta">
-                            <span>📅 15 Fev 2026</span>
-                            <span>⏱️ 7 min</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact">
-        <div class="container">
-            <div class="section-header reveal">
-                <span class="section-label">Contato</span>
-                <h2>Fale com a Agroforte</h2>
-                <div class="section-divider"></div>
-                <p>Estamos prontos para conversar sobre parcerias, projetos e como podemos construir juntos um agronegócio mais sustentável.</p>
-            </div>
-
-            <div class="contact-grid">
-                <form class="contact-form reveal" id="contactForm">
+        <!-- Contato Section -->
+        <section id="contato" class="contact" aria-labelledby="contato-heading">
+            <div class="container">
+                <h2 id="contato-heading" class="section-title animate-reveal">Entre em Contato</h2>
+                <form class="contact-form animate-reveal" aria-label="Formulário de contato">
                     <div class="form-group">
-                        <label>Nome completo *</label>
-                        <input type="text" required>
+                        <label for="nome">Nome</label>
+                        <input type="text" id="nome" name="nome" required aria-required="true">
                     </div>
                     <div class="form-group">
-                        <label>E-mail *</label>
-                        <input type="email" required>
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required aria-required="true">
                     </div>
                     <div class="form-group">
-                        <label>Assunto *</label>
-                        <select required>
-                            <option value="">Selecione um assunto</option>
-                            <option value="partnerships">Parcerias e Projetos</option>
-                            <option value="consulting">Consultoria Técnica</option>
-                            <option value="press">Imprensa e Comunicação</option>
-                            <option value="career">Oportunidades de Carreira</option>
-                            <option value="other">Outros</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label>Mensagem *</label>
-                        <textarea required></textarea>
+                        <label for="mensagem">Mensagem</label>
+                        <textarea id="mensagem" name="mensagem" rows="4" required aria-required="true"></textarea>
                     </div>
                     <button type="submit" class="submit-btn">Enviar Mensagem</button>
                 </form>
-
-                <div class="contact-info">
-                    <div class="info-card reveal">
-                        <h4>Telefone</h4>
-                        <p>+55 (65) 3333-4444</p>
-                    </div>
-                    <div class="info-card reveal">
-                        <h4>E-mail</h4>
-                        <p>contato@agroforte.com.br</p>
-                    </div>
-                    <div class="info-card reveal">
-                        <h4>Localização</h4>
-                        <p>Cuiabá, MT — Brasil</p>
-                    </div>
-                    <div class="info-card reveal">
-                        <h4>Certificações</h4>
-                        <p>ISO 14001 • Rainforest Alliance • ABC+ Certificado • RTRS</p>
-                    </div>
-                </div>
             </div>
-        </div>
-    </section>
+        </section>
+    </main>
 
-    <!-- Footer -->
-    <footer>
+    <footer role="contentinfo" aria-label="Rodapé">
         <div class="container">
             <div class="footer-content">
-                <div class="footer-section">
-                    <div class="logo" style="color: white;">
-                        <div class="logo-leaf">🌿</div>
-                        Agro<span style="color: var(--lime);">forte</span>
-                    </div>
-                    <p style="margin-top: 1rem; color: rgba(255, 255, 255, 0.7);">Construindo o futuro sustentável da agricultura brasileira, unindo produtividade e preservação ambiental.</p>
+                <div class="footer-info">
+                    <span class="logo-icon">🌱</span>
+                    <span>Agro Forte © 2024</span>
                 </div>
-
-                <div class="footer-section">
-                    <h4>Empresa</h4>
-                    <ul>
-                        <li><a href="#about">Sobre nós</a></li>
-                        <li><a href="#mission">Nossa Missão</a></li>
-                        <li><a href="#initiatives">Iniciativas</a></li>
-                        <li><a href="#blog">Blog</a></li>
-                    </ul>
-                </div>
-
-                <div class="footer-section">
-                    <h4>Recursos</h4>
-                    <ul>
-                        <li><a href="#blog">Artigos</a></li>
-                        <li><a href="#">Relatórios de Sustentabilidade</a></li>
-                        <li><a href="#">Certificações</a></li>
-                        <li><a href="#">Parceiros</a></li>
-                    </ul>
-                </div>
-
-                <div class="footer-section">
-                    <h4>Legal</h4>
-                    <ul>
-                        <li><a href="#">Política de Privacidade</a></li>
-                        <li><a href="#">Termos de Uso</a></li>
-                        <li><a href="#">Política de Cookies</a></li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="footer-bottom">
-                <p>© 2026 Agroforte. Todos os direitos reservados. | Feito com ❤️ pelo time Agroforte</p>
+                <p class="footer-tagline">Equilíbrio entre produção e meio ambiente</p>
             </div>
         </div>
     </footer>
-
-    <!-- Scroll to Top Button -->
-    <button class="scroll-to-top" id="scrollToTop">↑</button>
 
     <script src="script.js"></script>
 </body>
