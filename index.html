@@ -1,61 +1,170 @@
 
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AgroSustentável - Inovação no Campo</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+  <title>Agro Sustentável</title>
+
+  <link rel="stylesheet" href="style.css"/>
 </head>
+
 <body>
 
-    <header>
-        <nav aria-label="Menu Principal">
-            <div class="logo">AgroSustentável</div>
-            <ul class="nav-links">
-                <li><a href="#inicio">Início</a></li>
-                <li><a href="#servicos">Serviços</a></li>
-                <li><a href="#faq">Dúvidas</a></li>
-            </ul>
-            <div class="accessibility-controls">
-                <button id="increase-font" aria-label="Aumentar fonte">A+</button>
-                <button id="decrease-font" aria-label="Diminuir fonte">A-</button>
-                <button id="toggle-contrast" aria-label="Alternar alto contraste">🌓</button>
-            </div>
-        </nav>
-    </header>
+  <!-- HEADER -->
+  <header class="header">
 
-    <main>
-        <section id="inicio" class="hero scroll-reveal">
-            <h1>Tecnologia que cultiva o futuro.</h1>
-            <p>Soluções inteligentes para um agronegócio mais verde e eficiente.</p>
-        </section>
+    <div class="container nav">
 
-        <section id="servicos" class="scroll-reveal">
-            <h2>Nossos Pilares</h2>
-            <div id="cards-container" class="grid-container">
-                </div>
-        </section>
+      <h1 class="logo">AgroSustentável</h1>
 
-        <section id="faq" class="scroll-reveal">
-            <h2>Perguntas Frequentes</h2>
-            <div class="accordion">
-                <div class="accordion-item">
-                    <button class="accordion-header" aria-expanded="false">
-                        Como funciona o monitoramento via satélite?
-                    </button>
-                    <div class="accordion-content">
-                        <p>Utilizamos imagens de alta resolução processadas por IA para identificar pragas e carências nutricionais em tempo real.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
+      <nav aria-label="Menu principal">
+        <ul class="menu">
+          <li><a href="#sobre">Sobre</a></li>
+          <li><a href="#beneficios">Benefícios</a></li>
+          <li><a href="#galeria">Galeria</a></li>
+          <li><a href="#faq">FAQ</a></li>
+        </ul>
+      </nav>
 
-    <footer>
-        <p>&copy; 2026 AgroSustentável - Cultivando conexões.</p>
-    </footer>
+      <!-- BOTÕES DE ACESSIBILIDADE -->
+      <div class="accessibility-buttons">
 
-    <script src="script.js"></script>
+        <button id="increase-font" aria-label="Aumentar fonte">
+          A+
+        </button>
+
+        <button id="decrease-font" aria-label="Diminuir fonte">
+          A-
+        </button>
+
+        <button id="contrast-btn" aria-label="Ativar alto contraste">
+          Contraste
+        </button>
+
+      </div>
+
+    </div>
+
+  </header>
+
+  <!-- MAIN -->
+  <main>
+
+    <!-- HERO -->
+    <section class="hero reveal">
+
+      <div class="container hero-content">
+
+        <article>
+          <h2>Produzir hoje sem destruir o amanhã</h2>
+
+          <p>
+            O agro sustentável une tecnologia, produtividade e preservação ambiental para garantir um futuro melhor.
+          </p>
+
+          <a href="#beneficios" class="btn">
+            Conheça Mais
+          </a>
+        </article>
+
+        <img
+          src="https://images.unsplash.com/photo-1500937386664-56d1dfef3854?q=80&w=1200"
+          alt="Plantação sustentável"
+        />
+
+      </div>
+
+    </section>
+
+    <!-- SOBRE -->
+    <section id="sobre" class="about reveal">
+
+      <div class="container">
+
+        <h2>O que é Agro Sustentável?</h2>
+
+        <p>
+          O agro sustentável busca equilibrar produção agrícola, economia e preservação do meio ambiente.
+        </p>
+
+      </div>
+
+    </section>
+
+    <!-- BENEFÍCIOS -->
+    <section id="beneficios" class="benefits reveal">
+
+      <div class="container">
+
+        <h2>Benefícios</h2>
+
+        <!-- CARDS GERADOS PELO JS -->
+        <div class="cards" id="cards-container"></div>
+
+      </div>
+
+    </section>
+
+    <!-- CARROSSEL -->
+    <section id="galeria" class="gallery reveal">
+
+      <div class="container">
+
+        <h2>Galeria</h2>
+
+        <div class="carousel">
+
+          <button class="carousel-btn" id="prev">
+            ❮
+          </button>
+
+          <img
+            id="carousel-image"
+            src=""
+            alt="Imagem da galeria"
+          />
+
+          <button class="carousel-btn" id="next">
+            ❯
+          </button>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq" class="faq reveal">
+
+      <div class="container">
+
+        <h2>Perguntas Frequentes</h2>
+
+        <div id="faq-container"></div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+
+    <div class="container">
+
+      <p>
+        © 2026 AgroSustentável - Todos os direitos reservados
+      </p>
+
+    </div>
+
+  </footer>
+
+  <script src="script.js"></script>
+
 </body>
 </html>
