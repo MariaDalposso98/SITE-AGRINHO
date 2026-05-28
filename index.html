@@ -1,86 +1,59 @@
 
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AgroSustentável - Futuro Verde</title>
+    <title>AgroSustentável - Inovação no Campo</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <a href="#conteudo-principal" class="sr-only">Pular para o conteúdo principal</a>
-
-    <div class="barra-acessibilidade" role="toolbar" aria-label="Ferramentas de Acessibilidade">
-        <button id="btn-contraste" aria-label="Alternar Alto Contraste">🌓 Alto Contraste</button>
-        <button id="btn-aumentar" aria-label="Aumentar tamanho do texto">A+</button>
-        <button id="btn-diminuir" aria-label="Diminuir tamanho do texto">A-</button>
-    </div>
-
-    <header role="banner">
-        <div class="container header-wrapper">
-            <div class="logo">Agro<span>Sustentável</span></div>
-            <nav role="navigation" aria-label="Menu Principal">
-                <ul class="nav-links">
-                    <li><a href="#sobre">Sobre</a></li>
-                    <li><a href="#solucoes">Soluções</a></li>
-                    <li><a href="#impacto">Impacto</a></li>
-                </ul>
-            </nav>
-        </div>
+    <header>
+        <nav aria-label="Menu Principal">
+            <div class="logo">AgroSustentável</div>
+            <ul class="nav-links">
+                <li><a href="#inicio">Início</a></li>
+                <li><a href="#servicos">Serviços</a></li>
+                <li><a href="#faq">Dúvidas</a></li>
+            </ul>
+            <div class="accessibility-controls">
+                <button id="increase-font" aria-label="Aumentar fonte">A+</button>
+                <button id="decrease-font" aria-label="Diminuir fonte">A-</button>
+                <button id="toggle-contrast" aria-label="Alternar alto contraste">🌓</button>
+            </div>
+        </nav>
     </header>
 
-    <main id="conteudo-principal" role="main">
-        
-        <section class="hero" aria-labelledby="hero-titulo">
-            <div class="container reveal">
-                <h1 id="hero-titulo">Tecnologia que alimenta o amanhã de forma sustentável</h1>
-                <p>Unimos inteligência de dados, IoT e práticas regenerativas para transformar o agronegócio.</p>
-                <a href="#solucoes" class="btn-primary">Conheça Nossas Soluções</a>
-            </div>
+    <main>
+        <section id="inicio" class="hero scroll-reveal">
+            <h1>Tecnologia que cultiva o futuro.</h1>
+            <p>Soluções inteligentes para um agronegócio mais verde e eficiente.</p>
         </section>
 
-        <section id="solucoes" class="secao-solucoes" aria-labelledby="solucoes-titulo">
-            <div class="container">
-                <h2 id="solucoes-titulo" class="reveal">Nossas Soluções Tecnológicas</h2>
-                <div id="grid-solucoes" class="grid-cards reveal">
-                    </div>
-            </div>
+        <section id="servicos" class="scroll-reveal">
+            <h2>Nossos Pilares</h2>
+            <div id="cards-container" class="grid-container">
+                </div>
         </section>
 
-        <section id="impacto" class="secao-faq" aria-labelledby="faq-titulo">
-            <div class="container reveal">
-                <h2 id="faq-titulo">Perguntas Frequentes & Impacto</h2>
-                <div class="acordeao-container">
-                    
-                    <div class="acordeao-item">
-                        <button class="acordeao-header" aria-expanded="false" aria-controls="resposta-1">
-                            Como a IA reduz o desperdício de água?
-                        </button>
-                        <div id="resposta-1" class="acordeao-conteudo" hidden>
-                            <p>Utilizamos sensores de umidade no solo conectados a algoritmos preditivos que acionam a irrigação apenas quando e onde é estritamente necessário.</p>
-                        </div>
+        <section id="faq" class="scroll-reveal">
+            <h2>Perguntas Frequentes</h2>
+            <div class="accordion">
+                <div class="accordion-item">
+                    <button class="accordion-header" aria-expanded="false">
+                        Como funciona o monitoramento via satélite?
+                    </button>
+                    <div class="accordion-content">
+                        <p>Utilizamos imagens de alta resolução processadas por IA para identificar pragas e carências nutricionais em tempo real.</p>
                     </div>
-
-                    <div class="acordeao-item">
-                        <button class="acordeao-header" aria-expanded="false" aria-controls="resposta-2">
-                            O sistema é compatível com pequenas propriedades?
-                        </button>
-                        <div id="resposta-2" class="acordeao-conteudo" hidden>
-                            <p>Sim! Nossa arquitetura é modular e escalável, adaptando-se desde a agricultura familiar até grandes latifúndios produtivos.</p>
-                        </div>
-                    </div>
-
                 </div>
             </div>
         </section>
-
     </main>
 
-    <footer role="contentinfo">
-        <div class="container">
-            <p>&copy; 2026 AgroSustentável. Todos os direitos reservados. Foco em UX e Acessibilidade.</p>
-        </div>
+    <footer>
+        <p>&copy; 2026 AgroSustentável - Cultivando conexões.</p>
     </footer>
 
     <script src="script.js"></script>
